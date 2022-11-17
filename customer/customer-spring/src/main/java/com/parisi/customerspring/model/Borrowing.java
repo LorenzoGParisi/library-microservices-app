@@ -1,9 +1,7 @@
 package com.parisi.customerspring.model;
 
 import java.util.List;
-
 import javax.validation.constraints.NotBlank;
-
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -13,6 +11,4 @@ public class Borrowing {
 	private long borrowingId;
 	@NotBlank
 	private List<Book> borrowingItems;
-	
-
 }
