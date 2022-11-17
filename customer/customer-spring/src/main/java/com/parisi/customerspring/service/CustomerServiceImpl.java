@@ -9,14 +9,14 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.parisi.customerspring.exception.ResourceNotFoundException;
 import com.parisi.customerspring.model.Customer;
-import com.parisi.customerspring.repository.customerRepository;
+import com.parisi.customerspring.repository.CustomerRepository;
 
 @Service
 @Transactional
 public class CustomerServiceImpl implements CustomerService {
 	
 	@Autowired
-	private customerRepository customerRepository;
+	private CustomerRepository customerRepository;
 
 	@Override
 	public Customer createCustomer(Customer customer) {

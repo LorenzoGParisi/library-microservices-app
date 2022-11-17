@@ -6,6 +6,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection = "BookDB")
 public class Book {
+	
 	@Id 
 	private long bookId;
 	@NotBlank

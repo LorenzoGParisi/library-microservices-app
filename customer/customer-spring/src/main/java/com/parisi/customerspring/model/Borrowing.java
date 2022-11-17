@@ -7,6 +7,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection = "BorrowingDB")
 public class Borrowing {
+	
 	@Id 
 	private long borrowingId;
 	@NotBlank

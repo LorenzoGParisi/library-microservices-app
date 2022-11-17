@@ -8,12 +8,14 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection = "CustomerDB")
 public class Customer {
+	
 	@Id 
 	private long customerId;
 	@NotBlank
 	@Size(max = 50)
 	private String name;
 	private String surname;
+	
 	public List<Borrowing> borrowing;
 	
 	public long getCustomerId() {
