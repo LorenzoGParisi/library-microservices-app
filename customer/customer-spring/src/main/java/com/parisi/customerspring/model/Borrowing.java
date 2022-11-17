@@ -5,7 +5,7 @@ import javax.validation.constraints.NotBlank;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection = "BorrowingDB")
+@Document(collection = "borrowings")
 public class Borrowing {
 	
 	@Id 

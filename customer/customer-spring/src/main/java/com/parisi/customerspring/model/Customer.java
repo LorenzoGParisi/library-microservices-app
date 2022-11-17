@@ -6,7 +6,7 @@ import javax.validation.constraints.Size;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection = "CustomerDB")
+@Document(collection = "customers")
 public class Customer {
 	
 	@Id 
@@ -15,8 +15,7 @@ public class Customer {
 	@Size(max = 50)
 	private String name;
 	private String surname;
-	
-	public List<Borrowing> borrowing;
+	private List<Borrowing> CustomerBorrowing;
 	
 	public long getCustomerId() {
 		return customerId;
@@ -36,15 +35,15 @@ public class Customer {
 	public void setSurname(String surname) {
 		this.surname = surname;
 	}
-	public List<Borrowing> getBorrowing() {
-		return borrowing;
+	public List<Borrowing> getCustomerBorrowing() {
+		return CustomerBorrowing;
 	}
-	public void setBorrowing(List<Borrowing> borrowing) {
-		this.borrowing = borrowing;
+	public void setCustomerBorrowing(List<Borrowing> customerBorrowing) {
+		CustomerBorrowing = customerBorrowing;
 	}
 	@Override
 	public String toString() {
-		return "Customer [customerId=" + customerId + ", name=" + name + ", surname=" + surname + ", borrowing="
-				+ borrowing + "]";
+		return "Customer [customerId=" + customerId + ", name=" + name + ", surname=" + surname + ", CustomerBorrowing="
+				+ CustomerBorrowing + "]";
 	}
 }
