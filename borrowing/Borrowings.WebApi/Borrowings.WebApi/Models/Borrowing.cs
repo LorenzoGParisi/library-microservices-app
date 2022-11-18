@@ -21,4 +21,4 @@ namespace Borrowings.WebApi.Models
         public DateTime BorrowingEnd { get; set; }
     }
 }
-}
+
