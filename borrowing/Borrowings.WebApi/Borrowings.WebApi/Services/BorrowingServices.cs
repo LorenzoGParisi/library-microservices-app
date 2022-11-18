@@ -29,5 +29,7 @@ namespace Borrowings.WebApi.Services
             await _context.Find(_ => true).ToListAsync();
         public async Task<Borrowing?> Get(int id) =>
             await _context.Find(x => x.Id == id).FirstOrDefaultAsync();
+        public async Task Create(Borrowing item) =>
+            await _context.InsertOneAsync(item);
     }
 }
