@@ -4,11 +4,13 @@ import java.util.List;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.Transient;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection = "customers")
 public class Customer {
-	
+	@Transient
+	public static final String SEQUENCE_NAME = "users_sequences";
 	@Id 
 	private long customerId;
 	@NotBlank
