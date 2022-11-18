@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "e182DP0R1YKp7GvAT0X0lZM1kibdGFvFSoAzWN9BO4VlcQTXr8heHpLxFsJBBne7r7dyIvRx0mqQlj2O5NWszg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\icts21-23.283\\Documents\\GitHub\\Nuova cartella (2)\\library-microservices-app\\borrowing\\Borrowings.WebApi\\Borrowings.WebApi\\Borrowings.WebApi.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\icts21-23.283\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "C:\\Users\\icts21-23.283\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\icts21-23.283\\.nuget\\packages\\swashbuckle.aspnetcore\\5.6.3\\swashbuckle.aspnetcore.5.6.3.nupkg.sha512",
+    "C:\\Users\\icts21-23.283\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\5.6.3\\swashbuckle.aspnetcore.swagger.5.6.3.nupkg.sha512",
+    "C:\\Users\\icts21-23.283\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\5.6.3\\swashbuckle.aspnetcore.swaggergen.5.6.3.nupkg.sha512",
+    "C:\\Users\\icts21-23.283\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\5.6.3\\swashbuckle.aspnetcore.swaggerui.5.6.3.nupkg.sha512"
+  ],
+  "logs": []
+}
