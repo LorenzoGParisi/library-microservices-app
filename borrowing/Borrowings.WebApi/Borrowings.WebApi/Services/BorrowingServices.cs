@@ -31,5 +31,9 @@ namespace Borrowings.WebApi.Services
             await _context.Find(x => x.Id == id).FirstOrDefaultAsync();
         public async Task Create(Borrowing item) =>
             await _context.InsertOneAsync(item);
+        public async Task Update(int id, Borrowing item) =>
+            await _context.ReplaceOneAsync(x => x.Id == id, item);
+        public async Task Delete(int id) =>
+            await _context.DeleteOneAsync(x => x.Id == id);
     }
 }
