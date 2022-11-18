@@ -33,5 +33,45 @@ namespace Borrowings.WebApi.Controllers
 
             return borrowing;
         }
+
+        [HttpPost]
+        public async Task<IActionResult> Post(Borrowing item)
+        {
+            await _service.Create(item);
+
+            return CreatedAtAction(nameof(Get), new { id = item.Id }, item);
+        }
+
+        [HttpPut("{id:length(24)}")]
+        public async Task<IActionResult> Update(int id, Borrowing item)
+        {
+            var borrowing = await _service.Get(id);
+
+            if (borrowing is null)
+            {
+                return NotFound();
+            }
+
+            item.Id = borrowing.Id;
+
+            await _service.Update(id, item);
+
+            return NoContent();
+        }
+
+        [HttpDelete("{id:length(24)}")]
+        public async Task<IActionResult> Delete(int id)
+        {
+            var borrowing = await _service.Get(id);
+
+            if (borrowing is null)
+            {
+                return NotFound();
+            }
+
+            await _service.Delete(id);
+
+            return NoContent();
+        }
     }
 }
