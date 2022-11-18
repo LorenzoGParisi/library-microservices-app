@@ -25,5 +25,9 @@ namespace Borrowings.WebApi.Services
             _context = mongoDatabase.GetCollection<Borrowing>(
                 borrowingDbSettings.Value.BooksCollectionName);
         }
+        public async Task<List<Borrowing>> Get() =>
+            await _context.Find(_ => true).ToListAsync();
+        public async Task<Borrowing?> Get(int id) =>
+            await _context.Find(x => x.Id == id).FirstOrDefaultAsync();
     }
 }
