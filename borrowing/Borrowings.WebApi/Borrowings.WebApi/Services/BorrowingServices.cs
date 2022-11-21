@@ -23,7 +23,7 @@ namespace Borrowings.WebApi.Services
                 borrowingDbSettings.Value.DatabaseName);
 
             _context = mongoDatabase.GetCollection<Borrowing>(
-                borrowingDbSettings.Value.BooksCollectionName);
+                borrowingDbSettings.Value.BorrowingsCollectionName);
         }
         public async Task<List<Borrowing>> Get() =>
             await _context.Find(_ => true).ToListAsync();
