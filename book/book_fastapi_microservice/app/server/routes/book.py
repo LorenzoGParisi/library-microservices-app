@@ -27,3 +27,14 @@ async def get_book(id: str, response: Response ):
     else:
         response.status_code = status.HTTP_404_NOT_FOUND
         return ErrorResponseModel("Book doesn't exist.")
+
+
+@router.get("/")
+async def get_books(response: Response):
+    books = await retrieve_books()
+    if books:
+        response.status_code = status.HTTP_200_OK
+        return ResponseModel(books)
+    else:
+        response.status_code = status.HTTP_404_NOT_FOUND
+        return ErrorResponseModel("Book doesn't exist.")
