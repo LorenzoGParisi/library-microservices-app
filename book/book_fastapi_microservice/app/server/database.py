@@ -39,3 +39,17 @@ async def add_book(book_data: dict ):
     book = await book_collection.insert_one(book_data)
     new_book = await book_collection.find_one({"_id": book.inserted_id})
     return book_helper(new_book)
+
+
+async def update_book(id: str, data: dict):
+    # Return false if an empty request body is sent.
+    if len(data) < 1:
+        return False
+    book = await book_collection.find_one({"_id": ObjectId(id)})
+    if book:
+        updated_book = await book_collection.update_one(
+            {"_id": ObjectId(id)}, {"$set": data}
+        )
+        if updated_book:
+            return True
+        return False
