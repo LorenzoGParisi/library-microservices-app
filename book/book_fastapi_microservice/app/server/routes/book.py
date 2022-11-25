@@ -17,3 +17,13 @@ from server.models.book import (
 )
 
 router = APIRouter()
+
+@router.get("/{id}")
+async def get_book(id: str, response: Response ):
+    book = await retrieve_book(id)
+    if book:
+        response.status_code = status.HTTP_200_OK
+        return ResponseModel(book)
+    else:
+        response.status_code = status.HTTP_404_NOT_FOUND
+        return ErrorResponseModel("Book doesn't exist.")
