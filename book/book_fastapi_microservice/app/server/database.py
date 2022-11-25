@@ -26,3 +26,10 @@ async def retrieve_books():
     async for book in book_collection.find():
         books.append(book_helper(book))
     return books
+
+
+#retrieve an books with a matching id
+async def retrieve_book(id: str):
+    book = await book_collection.find_one({"_id": ObjectId(id)})
+    if book:
+        return book_helper(book)
