@@ -18,3 +18,11 @@ def book_helper(book):
         "title": book["title"],
         "author": book["author"],
     }
+
+# crud operations 
+#retrieve all books
+async def retrieve_books():
+    books = []
+    async for book in book_collection.find():
+        books.append(book_helper(book))
+    return books
