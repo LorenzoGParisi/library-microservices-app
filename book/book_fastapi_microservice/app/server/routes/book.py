@@ -38,3 +38,15 @@ async def get_books(response: Response):
     else:
         response.status_code = status.HTTP_404_NOT_FOUND
         return ErrorResponseModel("Book doesn't exist.")
+
+
+@router.post("/")
+async def add_books(response: Response,book: BookSchema = Body(...)):
+    book = jsonable_encoder(book)
+    new_book = await add_book(book)
+    if new_book:
+        response.status_code = status.HTTP_201_CREATED
+        return ResponseModel(new_book)
+    else:
+        response.status_code = status.HTTP_404_NOT_FOUND
+        return ErrorResponseModel("Book doesn't exist.")
