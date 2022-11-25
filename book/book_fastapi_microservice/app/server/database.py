@@ -53,3 +53,11 @@ async def update_book(id: str, data: dict):
         if updated_book:
             return True
         return False
+
+
+#delete an book
+async def delete_book(id: str):
+    book = await book_collection.find_one({"_id": ObjectId(id)})
+    if book:
+        await book_collection.delete_one({"_id":ObjectId(id)})
+        return True
