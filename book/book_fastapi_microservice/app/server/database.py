@@ -33,3 +33,9 @@ async def retrieve_book(id: str):
     book = await book_collection.find_one({"_id": ObjectId(id)})
     if book:
         return book_helper(book)
+
+#create an book
+async def add_book(book_data: dict ):
+    book = await book_collection.insert_one(book_data)
+    new_book = await book_collection.find_one({"_id": book.inserted_id})
+    return book_helper(new_book)
