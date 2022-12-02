@@ -7,7 +7,7 @@ MONGO_DETAILS = "mongodb://localhost:27017"
 client = motor.motor_asyncio.AsyncIOMotorClient(MONGO_DETAILS)
 
 # database
-database = client.books
+database = client.test
 
 # collection
 book_collection = database.get_collection("books_collection")
