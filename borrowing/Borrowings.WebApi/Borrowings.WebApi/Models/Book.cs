@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MongoDB.Bson;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -7,7 +8,7 @@ namespace Borrowings.WebApi.Models
 {
     public class Book
     {
-        public int Id { get; set; }
+        public string _id { get; set; }
         public string Title { get; set; }
     }
 }

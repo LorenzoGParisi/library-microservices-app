@@ -2,6 +2,7 @@
 using Borrowings.WebApi.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using MongoDB.Bson;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,6 @@ using System.Threading.Tasks;
 
 namespace Borrowings.WebApi.Controllers
 {
-    [ApiController]
     [Route("[controller]")]
     public class BorrowingController : ControllerBase
     {
@@ -22,7 +22,7 @@ namespace Borrowings.WebApi.Controllers
             await _service.Get();
 
         [HttpGet("{id:length(24)}")]
-        public async Task<ActionResult<Borrowing>> Get(int id)
+        public async Task<ActionResult<Borrowing>> Get(string id)
         {
             var borrowing = await _service.Get(id);
 
@@ -39,11 +39,11 @@ namespace Borrowings.WebApi.Controllers
         {
             await _service.Create(item);
 
-            return CreatedAtAction(nameof(Get), new { id = item.Id }, item);
+            return CreatedAtAction(nameof(Get), new { id = item._id }, item);
         }
 
         [HttpPut("{id:length(24)}")]
-        public async Task<IActionResult> Update(int id, Borrowing item)
+        public async Task<IActionResult> Update(string id, Borrowing item)
         {
             var borrowing = await _service.Get(id);
 
@@ -52,7 +52,7 @@ namespace Borrowings.WebApi.Controllers
                 return NotFound();
             }
 
-            item.Id = borrowing.Id;
+            item._id = borrowing._id;
 
             await _service.Update(id, item);
 
@@ -60,7 +60,7 @@ namespace Borrowings.WebApi.Controllers
         }
 
         [HttpDelete("{id:length(24)}")]
-        public async Task<IActionResult> Delete(int id)
+        public async Task<IActionResult> Delete(string id)
         {
             var borrowing = await _service.Get(id);
 

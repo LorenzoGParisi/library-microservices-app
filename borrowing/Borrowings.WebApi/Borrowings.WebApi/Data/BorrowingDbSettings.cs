@@ -11,6 +11,6 @@ namespace Borrowings.WebApi.Data
 
         public string DatabaseName { get; set; } = null!;
 
-        public string BorrowingsCollectionName { get; set; } = null!;
+        public string CollectionName { get; set; } = null!;
     }
 }
