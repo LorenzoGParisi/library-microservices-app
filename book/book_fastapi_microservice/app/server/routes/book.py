@@ -57,7 +57,7 @@ async def update_book_data(response: Response,id: str, req: UpdateBookModel = Bo
     updated_book = await update_book(id, req)
     if updated_book:
         response.status_code = status.HTTP_200_OK
-        return ResponseModel(update_book)
+        return ResponseModel(updated_book)
     else:
         response.status_code = status.HTTP_404_NOT_FOUND
         return ErrorResponseModel("Book doesn't exist.")

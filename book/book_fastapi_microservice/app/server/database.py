@@ -45,13 +45,19 @@ async def update_book(id: str, data: dict):
     # Return false if an empty request body is sent.
     if len(data) < 1:
         return False
+
+
+    # database.book_collection.find_one_and_update({"_id": ObjectId(id)},
+    # {"$set": data})
+    # print(data)
+    # return data
     book = await book_collection.find_one({"_id": ObjectId(id)})
     if book:
         updated_book = await book_collection.update_one(
             {"_id": ObjectId(id)}, {"$set": data}
         )
         if updated_book:
-            return True
+            return data
         return False
 
 
