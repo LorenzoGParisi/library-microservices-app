@@ -38,3 +38,47 @@ C:\Users\icts21-23.283\Documents\GitHub\Nuova cartella (2)\library-microservices
 C:\Users\icts21-23.283\Documents\GitHub\Nuova cartella (2)\library-microservices-app\borrowing\Borrowings.WebApi\Borrowings.WebApi\obj\Debug\net5.0\ref\Borrowings.WebApi.dll
 C:\Users\icts21-23.283\Documents\GitHub\Nuova cartella (2)\library-microservices-app\borrowing\Borrowings.WebApi\Borrowings.WebApi\obj\Debug\net5.0\Borrowings.WebApi.pdb
 C:\Users\icts21-23.283\Documents\GitHub\Nuova cartella (2)\library-microservices-app\borrowing\Borrowings.WebApi\Borrowings.WebApi\obj\Debug\net5.0\Borrowings.WebApi.genruntimeconfig.cache
+C:\Users\lenovo\Documents\GitHub\library-microservices-app\borrowing\Borrowings.WebApi\Borrowings.WebApi\bin\Debug\net5.0\appsettings.Development.json
+C:\Users\lenovo\Documents\GitHub\library-microservices-app\borrowing\Borrowings.WebApi\Borrowings.WebApi\bin\Debug\net5.0\appsettings.json
+C:\Users\lenovo\Documents\GitHub\library-microservices-app\borrowing\Borrowings.WebApi\Borrowings.WebApi\bin\Debug\net5.0\Borrowings.WebApi.exe
+C:\Users\lenovo\Documents\GitHub\library-microservices-app\borrowing\Borrowings.WebApi\Borrowings.WebApi\bin\Debug\net5.0\Borrowings.WebApi.deps.json
+C:\Users\lenovo\Documents\GitHub\library-microservices-app\borrowing\Borrowings.WebApi\Borrowings.WebApi\bin\Debug\net5.0\Borrowings.WebApi.runtimeconfig.json
+C:\Users\lenovo\Documents\GitHub\library-microservices-app\borrowing\Borrowings.WebApi\Borrowings.WebApi\bin\Debug\net5.0\Borrowings.WebApi.runtimeconfig.dev.json
+C:\Users\lenovo\Documents\GitHub\library-microservices-app\borrowing\Borrowings.WebApi\Borrowings.WebApi\bin\Debug\net5.0\Borrowings.WebApi.dll
+C:\Users\lenovo\Documents\GitHub\library-microservices-app\borrowing\Borrowings.WebApi\Borrowings.WebApi\bin\Debug\net5.0\Borrowings.WebApi.pdb
+C:\Users\lenovo\Documents\GitHub\library-microservices-app\borrowing\Borrowings.WebApi\Borrowings.WebApi\bin\Debug\net5.0\DnsClient.dll
+C:\Users\lenovo\Documents\GitHub\library-microservices-app\borrowing\Borrowings.WebApi\Borrowings.WebApi\bin\Debug\net5.0\Microsoft.OpenApi.dll
+C:\Users\lenovo\Documents\GitHub\library-microservices-app\borrowing\Borrowings.WebApi\Borrowings.WebApi\bin\Debug\net5.0\MongoDB.Bson.dll
+C:\Users\lenovo\Documents\GitHub\library-microservices-app\borrowing\Borrowings.WebApi\Borrowings.WebApi\bin\Debug\net5.0\MongoDB.Driver.dll
+C:\Users\lenovo\Documents\GitHub\library-microservices-app\borrowing\Borrowings.WebApi\Borrowings.WebApi\bin\Debug\net5.0\MongoDB.Driver.Core.dll
+C:\Users\lenovo\Documents\GitHub\library-microservices-app\borrowing\Borrowings.WebApi\Borrowings.WebApi\bin\Debug\net5.0\MongoDB.Libmongocrypt.dll
+C:\Users\lenovo\Documents\GitHub\library-microservices-app\borrowing\Borrowings.WebApi\Borrowings.WebApi\bin\Debug\net5.0\SharpCompress.dll
+C:\Users\lenovo\Documents\GitHub\library-microservices-app\borrowing\Borrowings.WebApi\Borrowings.WebApi\bin\Debug\net5.0\Snappier.dll
+C:\Users\lenovo\Documents\GitHub\library-microservices-app\borrowing\Borrowings.WebApi\Borrowings.WebApi\bin\Debug\net5.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\lenovo\Documents\GitHub\library-microservices-app\borrowing\Borrowings.WebApi\Borrowings.WebApi\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\lenovo\Documents\GitHub\library-microservices-app\borrowing\Borrowings.WebApi\Borrowings.WebApi\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\lenovo\Documents\GitHub\library-microservices-app\borrowing\Borrowings.WebApi\Borrowings.WebApi\bin\Debug\net5.0\ZstdSharp.dll
+C:\Users\lenovo\Documents\GitHub\library-microservices-app\borrowing\Borrowings.WebApi\Borrowings.WebApi\bin\Debug\net5.0\runtimes\linux\native\libmongocrypt.so
+C:\Users\lenovo\Documents\GitHub\library-microservices-app\borrowing\Borrowings.WebApi\Borrowings.WebApi\bin\Debug\net5.0\runtimes\osx\native\libmongocrypt.dylib
+C:\Users\lenovo\Documents\GitHub\library-microservices-app\borrowing\Borrowings.WebApi\Borrowings.WebApi\bin\Debug\net5.0\runtimes\win\native\mongocrypt.dll
+C:\Users\lenovo\Documents\GitHub\library-microservices-app\borrowing\Borrowings.WebApi\Borrowings.WebApi\obj\Debug\net5.0\Borrowings.WebApi.csproj.AssemblyReference.cache
+C:\Users\lenovo\Documents\GitHub\library-microservices-app\borrowing\Borrowings.WebApi\Borrowings.WebApi\obj\Debug\net5.0\Borrowings.WebApi.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\lenovo\Documents\GitHub\library-microservices-app\borrowing\Borrowings.WebApi\Borrowings.WebApi\obj\Debug\net5.0\Borrowings.WebApi.AssemblyInfoInputs.cache
+C:\Users\lenovo\Documents\GitHub\library-microservices-app\borrowing\Borrowings.WebApi\Borrowings.WebApi\obj\Debug\net5.0\Borrowings.WebApi.AssemblyInfo.cs
+C:\Users\lenovo\Documents\GitHub\library-microservices-app\borrowing\Borrowings.WebApi\Borrowings.WebApi\obj\Debug\net5.0\Borrowings.WebApi.csproj.CoreCompileInputs.cache
+C:\Users\lenovo\Documents\GitHub\library-microservices-app\borrowing\Borrowings.WebApi\Borrowings.WebApi\obj\Debug\net5.0\Borrowings.WebApi.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\lenovo\Documents\GitHub\library-microservices-app\borrowing\Borrowings.WebApi\Borrowings.WebApi\obj\Debug\net5.0\Borrowings.WebApi.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\lenovo\Documents\GitHub\library-microservices-app\borrowing\Borrowings.WebApi\Borrowings.WebApi\obj\Debug\net5.0\staticwebassets\Borrowings.WebApi.StaticWebAssets.Manifest.cache
+C:\Users\lenovo\Documents\GitHub\library-microservices-app\borrowing\Borrowings.WebApi\Borrowings.WebApi\obj\Debug\net5.0\scopedcss\bundle\Borrowings.WebApi.styles.css
+C:\Users\lenovo\Documents\GitHub\library-microservices-app\borrowing\Borrowings.WebApi\Borrowings.WebApi\obj\Debug\net5.0\Borrowings.WebApi.RazorTargetAssemblyInfo.cache
+C:\Users\lenovo\Documents\GitHub\library-microservices-app\borrowing\Borrowings.WebApi\Borrowings.WebApi\obj\Debug\net5.0\Borrowings.WebApi.csproj.CopyComplete
+C:\Users\lenovo\Documents\GitHub\library-microservices-app\borrowing\Borrowings.WebApi\Borrowings.WebApi\obj\Debug\net5.0\Borrowings.WebApi.dll
+C:\Users\lenovo\Documents\GitHub\library-microservices-app\borrowing\Borrowings.WebApi\Borrowings.WebApi\obj\Debug\net5.0\ref\Borrowings.WebApi.dll
+C:\Users\lenovo\Documents\GitHub\library-microservices-app\borrowing\Borrowings.WebApi\Borrowings.WebApi\obj\Debug\net5.0\Borrowings.WebApi.pdb
+C:\Users\lenovo\Documents\GitHub\library-microservices-app\borrowing\Borrowings.WebApi\Borrowings.WebApi\obj\Debug\net5.0\Borrowings.WebApi.genruntimeconfig.cache
+C:\Users\lenovo\Documents\GitHub\library-microservices-app\borrowing\Borrowings.WebApi\Borrowings.WebApi\obj\Debug\net5.0\staticwebassets\Borrowings.WebApi.StaticWebAssets.Pack.cache
+C:\Users\lenovo\Documents\GitHub\library-microservices-app\borrowing\Borrowings.WebApi\Borrowings.WebApi\obj\Debug\net5.0\staticwebassets\msbuild.Borrowings.WebApi.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\lenovo\Documents\GitHub\library-microservices-app\borrowing\Borrowings.WebApi\Borrowings.WebApi\obj\Debug\net5.0\staticwebassets\msbuild.build.Borrowings.WebApi.props
+C:\Users\lenovo\Documents\GitHub\library-microservices-app\borrowing\Borrowings.WebApi\Borrowings.WebApi\obj\Debug\net5.0\staticwebassets\msbuild.buildMultiTargeting.Borrowings.WebApi.props
+C:\Users\lenovo\Documents\GitHub\library-microservices-app\borrowing\Borrowings.WebApi\Borrowings.WebApi\obj\Debug\net5.0\staticwebassets\msbuild.buildTransitive.Borrowings.WebApi.props
+C:\Users\lenovo\Documents\GitHub\library-microservices-app\borrowing\Borrowings.WebApi\Borrowings.WebApi\obj\Debug\net5.0\refint\Borrowings.WebApi.dll
