@@ -45,14 +45,18 @@ async def get_books(response: Response):
 
 @router.post("/")
 async def add_books(response: Response,book: BookSchema = Body(...)):
-    book = jsonable_encoder(book)
-    new_book = await add_book(book)
-    if new_book:
-        response.status_code = status.HTTP_201_CREATED
-        return ResponseModel(new_book)
-    else:
+    try:
+        book = jsonable_encoder(book)
+        new_book = await add_book(book)
+        if new_book:
+            response.status_code = status.HTTP_201_CREATED
+            return ResponseModel(new_book)
+    except:
         response.status_code = status.HTTP_404_NOT_FOUND
-        return ErrorResponseModel("Book doesn't exist.")
+        return ErrorResponseModel("Book already exists.")
+    # else:
+    #     response.status_code = status.HTTP_404_NOT_FOUND
+    #     return ErrorResponseModel("Book doesn't exist.")
 
 @router.put("/{id}")
 async def update_book_data(response: Response,id: str, req: UpdateBookModel = Body(...)):

@@ -11,3 +11,8 @@ app.include_router(BookRouter, tags=["Book"], prefix="/book")
 async def custom_http_exception_handler(request, exc):
     print(f"OMG! An HTTP error!: {repr(exc)}")
     return JSONResponse({"detail": "Endpoint is wrong"}, status_code=exc.status_code)
+
+# @app.exception_handler(StarletteHTTPException)
+# async def custom_http_exception_handler(request, exc):
+#     print(f"OMG! An HTTP error!: {repr(exc)}")
+#     return JSONResponse({"detail": "Endpoint is wrong"}, status_code=exc.status_code)
