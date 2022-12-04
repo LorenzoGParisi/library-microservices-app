@@ -69,11 +69,15 @@ async def update_book_data(response: Response,id: str, req: UpdateBookModel = Bo
 
 @router.delete("/{id}")
 async def delete_book_data(response: Response,id: str):
-    deleted_book= await delete_book(id)
-    if deleted_book:
-        response.status_code = status.HTTP_200_OK
-        # return f"Book with {id} is deleted"
-        return ResponseModel(f"Book with {id} is deleted")
+    if ObjectId.is_valid(id):
+        deleted_book= await delete_book(id)
+        if deleted_book:
+            response.status_code = status.HTTP_200_OK
+            # return f"Book with {id} is deleted"
+            return ResponseModel(f"Book with {id} is deleted")
+        else:
+            response.status_code = status.HTTP_404_NOT_FOUND
+            return ErrorResponseModel("Book doesn't exist.")
     else:
         response.status_code = status.HTTP_404_NOT_FOUND
-        return ErrorResponseModel("Book doesn't exist.")
+        return ErrorResponseModel("Id doesn't exist.")
