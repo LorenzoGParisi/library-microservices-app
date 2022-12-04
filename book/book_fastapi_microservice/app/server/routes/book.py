@@ -26,7 +26,7 @@ async def get_book(id: str, response: Response ):
         return ResponseModel(book)
     else:
         response.status_code = status.HTTP_404_NOT_FOUND
-        return ErrorResponseModel("Book doesn't exist.")
+        return ErrorResponseModel("Id doesn't match.")
 
 
 @router.get("/")
