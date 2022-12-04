@@ -1,10 +1,11 @@
-from typing import Optional, Union
+from typing import List, Optional, Union
 from pydantic import BaseModel, Field
 
 
 class BookSchema(BaseModel):
     title: str = Field(... , max_length=100,) 
-    author : str = Field(... , max_length=100,) 
+    author : Union [str, List] = Field(... , max_length=100,)
+    # Field(... , max_length=100,)
 
     class Config:
         schema_extra = {
@@ -17,7 +18,8 @@ class BookSchema(BaseModel):
 class UpdateBookModel(BaseModel):
 
     title: Union [str, None]=  Field(max_length=100)
-    author: Union [str, None]=  Field(max_length=100)
+    author: Union [str,List, None]=  Field(max_length=100)
+
 
     class Config:
         schema_extra = {
