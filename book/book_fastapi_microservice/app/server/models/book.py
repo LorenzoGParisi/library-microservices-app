@@ -5,7 +5,6 @@ from pydantic import BaseModel, Field
 class BookSchema(BaseModel):
     title: str = Field(... , max_length=100,) 
     author : Union [str, List] = Field(... , max_length=100,)
-    # Field(... , max_length=100,)
 
     class Config:
         schema_extra = {
