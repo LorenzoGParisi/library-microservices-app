@@ -60,7 +60,7 @@ async def update_book_data(response: Response,id: str, req: UpdateBookModel = Bo
         return ResponseModel(updated_book)
     else:
         response.status_code = status.HTTP_404_NOT_FOUND
-        return ErrorResponseModel("Book doesn't exist.")
+        return ErrorResponseModel("Id doesn't match.")
 
 
 @router.delete("/{id}")
