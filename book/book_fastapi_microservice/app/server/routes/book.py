@@ -1,5 +1,6 @@
 from fastapi import APIRouter, Body, Response, status
 from fastapi.encoders import jsonable_encoder
+from bson import ObjectId
 
 from server.database import (
     retrieve_books,
@@ -20,10 +21,12 @@ router = APIRouter()
 
 @router.get("/{id}")
 async def get_book(id: str, response: Response ):
-    book = await retrieve_book(id)
-    if book:
-        response.status_code = status.HTTP_200_OK
-        return ResponseModel(book)
+
+    if ObjectId.is_valid(id):
+        book = await retrieve_book(id)
+        if book:
+            response.status_code = status.HTTP_200_OK
+            return ResponseModel(book)
     else:
         response.status_code = status.HTTP_404_NOT_FOUND
         return ErrorResponseModel("Id doesn't match.")
