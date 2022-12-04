@@ -69,7 +69,7 @@ async def delete_book_data(response: Response,id: str):
     if deleted_book:
         response.status_code = status.HTTP_200_OK
         # return f"Book with {id} is deleted"
-        return ErrorResponseModel(f"Book with {id} is deleted")
+        return ResponseModel(f"Book with {id} is deleted")
     else:
         response.status_code = status.HTTP_404_NOT_FOUND
         return ErrorResponseModel("Book doesn't exist.")

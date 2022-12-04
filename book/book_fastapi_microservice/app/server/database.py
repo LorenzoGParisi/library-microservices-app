@@ -53,10 +53,12 @@ async def retrieve_book(id: str):
 async def add_book(book_data: dict ):
     dict_lowerCase(book_data)
 
-    book = await book_collection.insert_one(book_data)
+    print(book_data)
+    if book_data:
+        book = await book_collection.insert_one(book_data)
 
-    new_book = await book_collection.find_one({"_id": book.inserted_id})
-    return book_helper(new_book)
+        new_book = await book_collection.find_one({"_id": book.inserted_id})
+        return book_helper(new_book)
 
 
 async def update_book(id: str, data: dict):
