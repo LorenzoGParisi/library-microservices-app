@@ -12,8 +12,9 @@ namespace Borrowings.WebApi.Models
     {
         [BsonId]
         [BsonRepresentation(MongoDB.Bson.BsonType.ObjectId)]
-        public string? _id { get; set; }
-        public ICollection<Book> BorrowingItem { get; set; }
+        public string _id { get; set; }
+        public string CustomerId { get; set; }
+        public ICollection<string> BookId { get; set; }
         [BsonRepresentation(MongoDB.Bson.BsonType.DateTime)]
         public DateTime BorrowingStart { get; set; }
         [BsonRepresentation(MongoDB.Bson.BsonType.DateTime)]
