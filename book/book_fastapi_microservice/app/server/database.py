@@ -20,6 +20,11 @@ def book_helper(book):
         "author": book["author"],
     }
 
+index = book_collection.create_index(
+    [("title", pymongo.ASCENDING), ("author", pymongo.ASCENDING)],
+    unique=True
+)
+
 #functions
 def dict_lowerCase(dict):
     for key in dict:
