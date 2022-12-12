@@ -2,14 +2,14 @@ from bson import ObjectId
 from fastapi import APIRouter, Response, status, Body
 from fastapi.encoders import jsonable_encoder
 
-from app.server.database import (
+from server.database import (
     retrieve_books,
     retrieve_book,
     add_book,
     update_book,
     delete_book
 )
-from app.server.models.book import (
+from server.models.book import (
     BookSchema,
     UpdateBookSchema,
     RespondeModel,

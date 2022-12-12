@@ -1,29 +1,29 @@
 import os
+
 from fastapi import FastAPI
-from app.server.routes.book import router as BookRouter
+from server.routes.book import router as BookRouter
 from starlette.exceptions import HTTPException as StarletteHTTPException
 from fastapi.responses import JSONResponse
-import asyncio
-import nest_asyncio
-import pymongo
-import time
-from pymongo import MongoClient
-
 
 app = FastAPI()
 
-
 app.include_router(BookRouter, tags=["Book"], prefix="/book")
 
-from app.server.database import MONGO_DETAILS, clientMotor
-nest_asyncio.apply()
+import asyncio
 
+import nest_asyncio
+from server.database import MONGO_DETAILS, clientMotor
+nest_asyncio.apply()
+import pymongo
+import time
+
+from pymongo import MongoClient
 
 async def get_server_info():
     client = clientMotor
 
     try:
-        print(await client.server_info())
+        # print(await client.server_info())
         print('connected')
     except pymongo.errors.ServerSelectionTimeoutError:
         print("Unable to connect to the database")
@@ -31,6 +31,7 @@ async def get_server_info():
         # raise SystemExit
 loop = asyncio.get_event_loop()
 loop.run_until_complete(get_server_info())
+# exit()
 
 @app.exception_handler(StarletteHTTPException)
 async def custom_http_exception_handler(request, exc):
