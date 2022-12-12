@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: customer/customer-spring/
+        working-directory: customer/customer-spring
     steps:
     - uses: actions/checkout@v2
     - name: Add hosts to /etc/hosts
