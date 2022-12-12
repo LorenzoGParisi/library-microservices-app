@@ -23,7 +23,7 @@ async def get_server_info():
     client = clientMotor
 
     try:
-        # print(await client.server_info())
+        print(await client.server_info())
         print('connected')
     except pymongo.errors.ServerSelectionTimeoutError:
         print("Unable to connect to the database")
