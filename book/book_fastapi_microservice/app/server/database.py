@@ -1,41 +1,28 @@
 import motor.motor_asyncio
-from bson.objectid import ObjectId
 import pymongo
-from pymongo.collation import Collation
-
+from bson.objectid import ObjectId
+from server.utilities. utilities import dict_lowerCase
 
 MONGO_DETAILS = "mongodb://localhost:27017"
-
-client = motor.motor_asyncio.AsyncIOMotorClient(MONGO_DETAILS)
-
-# database
-database = client.test
-
-# collection
+clientMotor = motor.motor_asyncio.AsyncIOMotorClient(MONGO_DETAILS, serverSelectionTimeoutMS=5000)
+database = clientMotor.book
 book_collection = database.get_collection("books_collection")
+
 def book_helper(book):
-    return{
+    return {
         "id": str(book["_id"]),
         "title": book["title"],
         "author": book["author"],
     }
 
+
 index = book_collection.create_index(
     [("title", pymongo.ASCENDING), ("author", pymongo.ASCENDING)],
-    unique=True
+    unique = True
 )
 
-#functions
-def dict_lowerCase(dict):
-    for key in dict:
-        if type(dict[key]) != type([]):
-            dict[key] = dict[key].lower()
-        elif type(dict[key]) == type([]):
-            for index,item in enumerate(dict[key]):
-                dict[key][index] = item.lower()
 
-# crud operations 
-#retrieve all books
+# retrieve all books
 async def retrieve_books():
     books = []
     async for book in book_collection.find():
@@ -43,36 +30,35 @@ async def retrieve_books():
     return books
 
 
-#retrieve an books with a matching id
+# retrieve books by id
 async def retrieve_book(id: str):
     book = await book_collection.find_one({"_id": ObjectId(id)})
     if book:
         return book_helper(book)
 
-#create an book
-async def add_book(book_data: dict ):
+
+# create book
+async def add_book(book_data: dict):
     dict_lowerCase(book_data)
-
-    print(book_data)
     if book_data:
-        book = await book_collection.insert_one(book_data)
+        try:
+            book = await book_collection.insert_one(book_data)
+            if book:
+                new_book = await book_collection.find_one({"_id": book.inserted_id})
+                return book_helper(new_book)
+            return False
+        except:
+            print('boh')
 
-        new_book = await book_collection.find_one({"_id": book.inserted_id})
-        return book_helper(new_book)
 
-
+# update book
 async def update_book(id: str, data: dict):
-    # Return false if an empty request body is sent.
-    if len(data) < 1:
+    if len(data)<1:
         return False
-
-
-    # database.book_collection.find_one_and_update({"_id": ObjectId(id)},
-    # {"$set": data})
-    # print(data)
-    # return data
     dict_lowerCase(data)
+
     book = await book_collection.find_one({"_id": ObjectId(id)})
+    print(book)
     if book:
         updated_book = await book_collection.update_one(
             {"_id": ObjectId(id)}, {"$set": data}
@@ -82,9 +68,12 @@ async def update_book(id: str, data: dict):
         return False
 
 
-#delete an book
-async def delete_book(id: str):
-    book = await book_collection.find_one({"_id": ObjectId(id)})
+# delete a book
+async def delete_book(id:str):
+    book = await book_collection.find_one({"_id":ObjectId(id)})
     if book:
-        await book_collection.delete_one({"_id":ObjectId(id)})
+        await book_collection.delete_one({"_id": ObjectId(id)})
         return True
+
+
+
