@@ -1,8 +1,7 @@
 FROM maven:3.6.3-jdk-8 as build
 ADD ./src/ /usr/src/customer-spring/src
 ADD ./pom.xml /usr/src/customer-spring
-RUN mvn -f /usr/src/customer-spring/pom.xml clean package -Dmaven.compiler.target=17 -Dmaven.compiler.source=17
-
+RUN mvn -f /usr/src/customer-spring/pom.xml clean package
 
 FROM openjdk:8
 EXPOSE 8080
