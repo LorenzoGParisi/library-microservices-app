@@ -1,7 +1,6 @@
 import motor.motor_asyncio
 from bson.objectid import ObjectId
 import pymongo
-from pymongo.collation import Collation
 
 
 MONGO_DETAILS = "mongodb://localhost:27017"
@@ -53,7 +52,6 @@ async def retrieve_book(id: str):
 async def add_book(book_data: dict ):
     dict_lowerCase(book_data)
 
-    print(book_data)
     if book_data:
         book = await book_collection.insert_one(book_data)
 
