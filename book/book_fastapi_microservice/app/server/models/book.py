@@ -1,38 +1,36 @@
-from typing import List, Optional, Union
+from typing import List,Union
 from pydantic import BaseModel, Field
 
-
 class BookSchema(BaseModel):
-    title: str = Field(... , max_length=100,) 
-    author : Union [str, List] = Field(... , max_length=100,)
+    title : str = Field(... , max_length=100)
+    author : Union[str, List] = Field(... , max_length=100)
 
     class Config:
         schema_extra = {
             "example": {
-                "title": "Zanna bianca",
-                "author": "Jack London"
+                "title": "zanna bianca",
+                "author": "jack london"
             }
         }
 
-class UpdateBookModel(BaseModel):
-
-    title: Union [str, None]=  Field(max_length=100)
-    author: Union [str,List, None]=  Field(max_length=100)
-
+class UpdateBookSchema(BaseModel):
+    title : Union[str,None] = Field(max_length=100)
+    author : Union[str, List, None] = Field(max_length=100)
 
     class Config:
-        schema_extra = {
+        schema_exra = {
             "example": {
-                "example": "example",
+                "title": "anna karenina",
+                "author": "tolstoj"
             }
         }
 
-def ResponseModel(data):
+def RespondeModel(data):
     return {
-        "data":[data]
+        "data": [data]
     }
 
-def ErrorResponseModel(message):
-    return {"message": message}
-
-
+def ErrorRespondeModel(message):
+    return {
+        "message": message
+    }
