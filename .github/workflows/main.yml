@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: customer/customer-spring/
+        working-directory: customer/customer-spring
     steps:
     - uses: actions/checkout@v2
     - name: Add hosts to /etc/hosts
@@ -24,8 +24,8 @@ jobs:
     - name: Build and push Docker image
       uses: docker/build-push-action@v1.1.0 
       with:
-        path: customer
-        dockerfile: customer/customer-spring/dockerfile
+        path: customer/customer-spring/
+        dockerfile: customer/customer-spring/Dockerfile
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
         repository: ${{ secrets.DOCKER_USERNAME }}/customer
