@@ -1,9 +1,9 @@
 FROM openjdk:17-jdk-slim
 RUN mkdir /app
 # Esegue la build dell'applicazione utilizzando Maven
-COPY /pom.xml /app
+COPY ./pom.xml /app
 RUN cd /app && mvn clean package
 # Copia il file JAR generato nella cartella /app
-COPY /target/customer-spring-0.0.1-SNAPSHOT.jar /app
+COPY ./target/customer-spring-0.0.1-SNAPSHOT.jar /app
 WORKDIR /app
 CMD ["java", "-jar", "customer-spring-0.0.1-SNAPSHOT.jar"]
