@@ -55,16 +55,16 @@ async def add_books(response: Response, book_body: BookSchema = Body(...)):
 
         print(book)
         new_book = await add_book(book)
-        # if not new_book:
+        if not new_book:
         # if not await add_book(book):
-        #     response.status_code = status.HTTP_404_NOT_FOUND
-        #     return ErrorRespondeModel("Book already exists")
+            response.status_code = status.HTTP_404_NOT_FOUND
+            return ErrorRespondeModel("Book already exists")
         response.status_code = status.HTTP_201_CREATED
         print('sono qui')
         return RespondeModel(new_book)
     except:
         response.status_code = status.HTTP_404_NOT_FOUND
-        return ErrorRespondeModel("book already exists")
+        return ErrorRespondeModel("something goes wrong")
 
 @router.put("/{id}")
 async def update_book_data(response: Response, id: str, req: UpdateBookSchema = Body(...)):

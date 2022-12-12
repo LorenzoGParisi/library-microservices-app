@@ -3,7 +3,7 @@ import pymongo
 from bson.objectid import ObjectId
 from server.utilities. utilities import dict_lowerCase
 
-MONGO_DETAILS = "mongodb://localhost:27017"
+MONGO_DETAILS = "mongodb://localhost:27018"
 clientMotor = motor.motor_asyncio.AsyncIOMotorClient(MONGO_DETAILS, serverSelectionTimeoutMS=5000)
 database = clientMotor.book
 book_collection = database.get_collection("books_collection")
