@@ -1,0 +1,11 @@
+FROM mcr.microsoft.com/dotnet/sdk:5.0 AS build
+WORKDIR /src
+COPY ["Borrowings.WebApi.csproj", "./"]
+RUN dotnet restore "Borrowings.WebApi.csproj"
+COPY . .
+RUN dotnet build "Borrowings.WebApi.csproj" -c Release -o /app/build
+
+FROM mcr.microsoft.com/dotnet/aspnet:5.0 AS runtime
+WORKDIR /app
+COPY --from=build /app/build .
+ENTRYPOINT ["dotnet", "Borrowings.WebApi.dll"]
