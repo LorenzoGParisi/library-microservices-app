@@ -1,8 +1,8 @@
 FROM python:latest
 WORKDIR /code
-COPY ./requirements.txt /code/requirements.txt
+ADD ./requirements.txt /code/requirements.txt
 RUN pip install -r /code/requirements.txt
-COPY ./app /code/app
+ADD ./app /code/app
 WORKDIR /code/app
 EXPOSE 8000
 CMD ["python", "main.py"]
