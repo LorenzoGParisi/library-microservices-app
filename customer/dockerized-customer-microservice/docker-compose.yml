@@ -1,0 +1,23 @@
+version: '3'
+services:
+  customer:
+    image: lorenzoparisidocker/customer
+    container_name: customer-container
+    ports:
+      - 8080:8080
+    environment:
+      MONGO_URL: mongodb://mongo:27017/test
+    networks:
+      - provaNetwork
+    command: dockerun
+    restart: always
+
+  mongo:
+    image: mongo
+    container_name: mongo
+    networks:
+      - provaNetwork
+    restart: always
+
+networks:
+  provaNetwork:
