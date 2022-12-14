@@ -55,7 +55,7 @@ jobs:
       uses: docker/build-push-action@v1.1.0 
       with:
         path: book/book_fastapi_microservice/
-        dockerfile: book/book_fastapi_microservice/Dockerfile
+        dockerfile: book/book_fastapi_microservice/dockerfile
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
         repository: ${{ secrets.DOCKER_USERNAME }}/book
