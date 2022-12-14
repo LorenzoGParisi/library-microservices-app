@@ -24,7 +24,7 @@ async def get_books(response: Response):
         books = await retrieve_books()
         if not books:
             response.status_code = status.HTTP_404_NOT_FOUND
-            return ErrorRespondeModel("book doesn't exist")
+            return ErrorRespondeModel("book doesn't exist ")
         response.status_code = status.HTTP_200_OK
         return RespondeModel(books)
     except pymongo.errors.ServerSelectionTimeoutError:
