@@ -1,6 +1,7 @@
 from bson import ObjectId
 from fastapi import APIRouter, Response, status, Body
 from fastapi.encoders import jsonable_encoder
+import pymongo 
 
 from server.database import (
     retrieve_books,
@@ -23,12 +24,12 @@ async def get_books(response: Response):
         books = await retrieve_books()
         if not books:
             response.status_code = status.HTTP_404_NOT_FOUND
-            return ErrorRespondeModel("book doesn't exist")
+            return ErrorRespondeModel("book doesn't exist ")
         response.status_code = status.HTTP_200_OK
         return RespondeModel(books)
-    except:
+    except pymongo.errors.ServerSelectionTimeoutError:
         response.status_code = status.HTTP_500_INTERNAL_SERVER_ERROR
-        return ErrorRespondeModel("something doesnt work")
+        return ErrorRespondeModel("something goes wrong")
 
 
 @router.get("/{id}")
@@ -44,25 +45,21 @@ async def get_book(id: str,response: Response):
         else:
             response.status_code = status.HTTP_404_NOT_FOUND
             return ErrorRespondeModel("not valid id")
-    except:
+    except pymongo.errors.ServerSelectionTimeoutError:
         response.status_code = status.HTTP_500_INTERNAL_SERVER_ERROR
-        return ErrorRespondeModel("something doesnt work")
+        return ErrorRespondeModel("something goes wrong")
 
 @router.post("/")
 async def add_books(response: Response, book_body: BookSchema = Body(...)):
     try:
         book = jsonable_encoder(book_body)
-
-        print(book)
         new_book = await add_book(book)
-        # if not new_book:
-        # if not await add_book(book):
-        #     response.status_code = status.HTTP_404_NOT_FOUND
-        #     return ErrorRespondeModel("Book already exists")
         response.status_code = status.HTTP_201_CREATED
-        print('sono qui')
         return RespondeModel(new_book)
-    except:
+    except pymongo.errors.ServerSelectionTimeoutError:
+        response.status_code = status.HTTP_500_INTERNAL_SERVER_ERROR
+        return ErrorRespondeModel("something goes wrong")
+    except pymongo.errors.DuplicateKeyError:
         response.status_code = status.HTTP_404_NOT_FOUND
         return ErrorRespondeModel("book already exists")
 
@@ -78,11 +75,11 @@ async def update_book_data(response: Response, id: str, req: UpdateBookSchema = 
             response.status_code = status.HTTP_200_OK
             return RespondeModel(updated_book)
         else:
-                response.status_code = status.HTTP_404_NOT_FOUND
-                return ErrorRespondeModel("not valid id")
-    except:
+            response.status_code = status.HTTP_404_NOT_FOUND
+            return ErrorRespondeModel("not valid id")
+    except pymongo.errors.ServerSelectionTimeoutError:
         response.status_code = status.HTTP_500_INTERNAL_SERVER_ERROR
-        return ErrorRespondeModel("something doesnt work")
+        return ErrorRespondeModel("something goes wrong")
 
 @router.delete("/{id}")
 async def delete_book_data(response:Response, id: str):
@@ -97,7 +94,6 @@ async def delete_book_data(response:Response, id: str):
         else:
             response.status_code = status.HTTP_404_NOT_FOUND
             return ErrorRespondeModel("not valid id")
-    except:
+    except pymongo.errors.ServerSelectionTimeoutError:
         response.status_code = status.HTTP_500_INTERNAL_SERVER_ERROR
-        return ErrorRespondeModel("something doesnt work")
-
+        return ErrorRespondeModel("something goes wrong")
