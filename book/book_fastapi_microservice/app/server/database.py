@@ -3,7 +3,9 @@ import pymongo
 from bson.objectid import ObjectId
 from server.utilities. utilities import dict_lowerCase
 
-MONGO_DETAILS = "mongodb://localhost:27018"
+# MONGO_DETAILS = "mongodb://localhost:27017"
+# stringa di connessione per il container di mongo. example-mongo e' il nome del container
+MONGO_DETAILS = "mongodb://example-mongo:27017"
 clientMotor = motor.motor_asyncio.AsyncIOMotorClient(MONGO_DETAILS, serverSelectionTimeoutMS=5000)
 database = clientMotor.book
 book_collection = database.get_collection("books_collection")
@@ -41,14 +43,12 @@ async def retrieve_book(id: str):
 async def add_book(book_data: dict):
     dict_lowerCase(book_data)
     if book_data:
-        try:
             book = await book_collection.insert_one(book_data)
+            print('sono qui')
             if book:
                 new_book = await book_collection.find_one({"_id": book.inserted_id})
                 return book_helper(new_book)
             return False
-        except:
-            print('boh')
 
 
 # update book
