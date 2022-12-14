@@ -17,12 +17,10 @@ def book_helper(book):
         "author": book["author"],
     }
 
-
 index = book_collection.create_index(
     [("title", pymongo.ASCENDING), ("author", pymongo.ASCENDING)],
     unique = True
 )
-
 
 # retrieve all books
 async def retrieve_books():
@@ -31,13 +29,11 @@ async def retrieve_books():
         books.append(book_helper(book))
     return books
 
-
 # retrieve books by id
 async def retrieve_book(id: str):
     book = await book_collection.find_one({"_id": ObjectId(id)})
     if book:
         return book_helper(book)
-
 
 # create book
 async def add_book(book_data: dict):
@@ -49,7 +45,6 @@ async def add_book(book_data: dict):
                 new_book = await book_collection.find_one({"_id": book.inserted_id})
                 return book_helper(new_book)
             return False
-
 
 # update book
 async def update_book(id: str, data: dict):
@@ -67,13 +62,9 @@ async def update_book(id: str, data: dict):
             return data
         return False
 
-
 # delete a book
 async def delete_book(id:str):
     book = await book_collection.find_one({"_id":ObjectId(id)})
     if book:
         await book_collection.delete_one({"_id": ObjectId(id)})
         return True
-
-
-
