@@ -76,9 +76,5 @@ C:\Users\lenovo\Documents\GitHub\library-microservices-app\borrowing\Borrowings.
 C:\Users\lenovo\Documents\GitHub\library-microservices-app\borrowing\Borrowings.WebApi\Borrowings.WebApi\obj\Debug\net5.0\ref\Borrowings.WebApi.dll
 C:\Users\lenovo\Documents\GitHub\library-microservices-app\borrowing\Borrowings.WebApi\Borrowings.WebApi\obj\Debug\net5.0\Borrowings.WebApi.pdb
 C:\Users\lenovo\Documents\GitHub\library-microservices-app\borrowing\Borrowings.WebApi\Borrowings.WebApi\obj\Debug\net5.0\Borrowings.WebApi.genruntimeconfig.cache
-C:\Users\lenovo\Documents\GitHub\library-microservices-app\borrowing\Borrowings.WebApi\Borrowings.WebApi\obj\Debug\net5.0\staticwebassets\Borrowings.WebApi.StaticWebAssets.Pack.cache
-C:\Users\lenovo\Documents\GitHub\library-microservices-app\borrowing\Borrowings.WebApi\Borrowings.WebApi\obj\Debug\net5.0\staticwebassets\msbuild.Borrowings.WebApi.Microsoft.AspNetCore.StaticWebAssets.props
-C:\Users\lenovo\Documents\GitHub\library-microservices-app\borrowing\Borrowings.WebApi\Borrowings.WebApi\obj\Debug\net5.0\staticwebassets\msbuild.build.Borrowings.WebApi.props
-C:\Users\lenovo\Documents\GitHub\library-microservices-app\borrowing\Borrowings.WebApi\Borrowings.WebApi\obj\Debug\net5.0\staticwebassets\msbuild.buildMultiTargeting.Borrowings.WebApi.props
-C:\Users\lenovo\Documents\GitHub\library-microservices-app\borrowing\Borrowings.WebApi\Borrowings.WebApi\obj\Debug\net5.0\staticwebassets\msbuild.buildTransitive.Borrowings.WebApi.props
-C:\Users\lenovo\Documents\GitHub\library-microservices-app\borrowing\Borrowings.WebApi\Borrowings.WebApi\obj\Debug\net5.0\refint\Borrowings.WebApi.dll
+C:\Users\lenovo\Documents\GitHub\library-microservices-app\borrowing\Borrowings.WebApi\Borrowings.WebApi\bin\Debug\net5.0\ref\Borrowings.WebApi.dll
+C:\Users\lenovo\Documents\GitHub\library-microservices-app\borrowing\Borrowings.WebApi\Borrowings.WebApi\obj\Debug\net5.0\staticwebassets\Borrowings.WebApi.StaticWebAssets.xml
