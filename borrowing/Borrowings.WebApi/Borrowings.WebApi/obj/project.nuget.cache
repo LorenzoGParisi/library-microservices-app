@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "s6IkNtndgS3ia6lSXAA7UkaPs9S4h4uMI8NsgWTI5trDJgoOBhlzdsTRrr0Khv8y0dDsLej8ZLYQTdJ3ZcRflg==",
+  "dgSpecHash": "PUaaZx7lzTIV1o3YIUfkEjVfMsIWV6uN05KGJZgH1qJO7OBYCOxzY2q6aEFpoXuG7qRQiGQL/yOj3mHNpczbWA==",
   "success": true,
   "projectFilePath": "C:\\Users\\lenovo\\Documents\\GitHub\\library-microservices-app\\borrowing\\Borrowings.WebApi\\Borrowings.WebApi\\Borrowings.WebApi.csproj",
   "expectedPackageFiles": [
