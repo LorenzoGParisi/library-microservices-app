@@ -6,7 +6,7 @@ services:
     ports:
       - 8080:8080
     environment:
-      - SPRING.DATA.MONGODB.HOST=mongo
+      - spring.data.mongodb.uri=mongodb://mongo:27017/test
     networks:
       - provaNetwork
     command: dockerun
